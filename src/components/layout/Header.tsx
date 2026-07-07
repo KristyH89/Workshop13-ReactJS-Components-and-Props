@@ -1,5 +1,5 @@
 import { Search, ShoppingCart } from "lucide-react";
-import logo from "../../assets/LITESHOPLOGO.jpg";
+import logo from "../../assets/LITESHOPLOGO2.jpg";
 import { Input } from "../ui/Input";
 
 const navigationItems = [
