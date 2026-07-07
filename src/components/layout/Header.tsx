@@ -1,6 +1,7 @@
 import { Search, ShoppingCart } from "lucide-react";
 import logo from "../../assets/LITESHOPLOGO2.jpg";
 import { Input } from "../ui/Input";
+import { Container } from "../ui/Container";
 
 const navigationItems = [
     "New Arrival",
@@ -13,14 +14,14 @@ const navigationItems = [
 export function Header() {
     return (
         <header className="border-b border-gray-200 bg-white">
-            <div className="mx-auto flex max-w-7xl items-center gap-8 px-6 py-4">
+            <Container className="flex items-center gap-8 py-4">
 
                 {/* Brand logo */}
                 <a href="/" className="flex items-center shrink-0">
                     <img
                         src={logo}
                         alt="LITE.SHOP logo"
-                        className="h-12 md:h-16 lg:h-20 w-auto object-contain"
+                        className="h-12 md:h-14 lg:h-16 w-auto object-contain"
                     />
                 </a>
 
@@ -71,8 +72,8 @@ export function Header() {
                     </button>
 
                 </div>
+            </Container>
 
-            </div>
         </header>
     );
 }
