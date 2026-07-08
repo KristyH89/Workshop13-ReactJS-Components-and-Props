@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Card } from "../ui/Card";
 
 export function HomeSidebar() {
     return (
         <aside className="w-64 shrink-0 space-y-6">
 
             {/* Block 1 — Primary Tint */}
-            <div className="rounded-2xl bg-[var(--color-primary)]/15 p-6 shadow-sm">
+            <Card surfaceClassName="bg-[var(--color-primary)]/15">
                 <h3 className="text-lg font-black text-slate-900 mb-4">
                     Shop Categories
                 </h3>
@@ -30,14 +32,10 @@ export function HomeSidebar() {
                         Sale
                     </Link>
                 </nav>
-            </div>
+            </Card>
 
             {/* Block 2 — Deep Primary Gradient */}
-            <div className="
-                rounded-2xl
-                bg-gradient-to-br from-[var(--color-primary)] to-[#255a54]
-                p-6 text-white shadow-md
-            ">
+            <Card surfaceClassName="bg-gradient-to-br from-[var(--color-primary)] to-[#255a54] text-white shadow-md">
                 <h3 className="text-lg font-black mb-3">
                     Seasonal Picks
                 </h3>
@@ -49,14 +47,15 @@ export function HomeSidebar() {
 
                 <Link
                     to="/shop"
-                    className="mt-4 inline-block text-amber-300 font-semibold hover:underline"
+                    className="mt-4 inline-flex items-center gap-1 text-amber-300 font-semibold hover:underline"
                 >
-                    Explore Collection →
+                    Explore Collection
+                    <ArrowRight size={16} />
                 </Link>
-            </div>
+            </Card>
 
             {/* Block 3 — Soft Accent (matching jouw amber accent) */}
-            <div className="rounded-2xl bg-amber-50 p-6 shadow-sm">
+            <Card surfaceClassName="bg-amber-50">
                 <h3 className="text-lg font-black text-slate-900 mb-3">
                     Trending Now
                 </h3>
@@ -78,11 +77,12 @@ export function HomeSidebar() {
 
                 <Link
                     to="/shop"
-                    className="mt-4 inline-block text-[var(--color-primary)] font-semibold hover:underline"
+                    className="mt-4 inline-flex items-center gap-1 text-[var(--color-primary)] font-semibold hover:underline"
                 >
-                    View All →
+                    View All
+                    <ArrowRight size={16} />
                 </Link>
-            </div>
+            </Card>
 
         </aside>
     );

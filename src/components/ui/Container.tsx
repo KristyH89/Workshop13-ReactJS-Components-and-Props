@@ -1,20 +1,20 @@
 // components/ui/Container.tsx
+import React from "react";
+
+type ContainerProps = {
+    children: React.ReactNode;
+    className?: string;
+
+    maxWidth?: string;
+};
+
 export function Container({
                               children,
                               className = "",
-                          }: {
-    children: React.ReactNode;
-    className?: string;
-}) {
+                              maxWidth = "max-w-[96rem]", // ~1536px, custom "8xl" — Tailwind has no built-in 8xl
+                          }: ContainerProps) {
     return (
-        <div
-            className={`
-                ml-0               /* Pin to the left edge instead of centering */
-                max-w-8xl          /* Limit the width so layout doesn't stretch too wide */
-                px-6 lg:px-10      /* Responsive horizontal padding */
-                ${className}
-            `}
-        >
+        <div className={`${maxWidth} px-6 lg:px-10 ${className}`}>
             {children}
         </div>
     );

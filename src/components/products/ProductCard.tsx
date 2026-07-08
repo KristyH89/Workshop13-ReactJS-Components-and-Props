@@ -1,5 +1,7 @@
 // components/products/ProductCard.tsx
+import { Eye, Plus } from "lucide-react";
 import { ProductRating } from "./ProductRating";
+import type { BadgeColor } from "../../types/product";
 
 type ProductCardProps = {
     image: string;
@@ -9,9 +11,19 @@ type ProductCardProps = {
     price: number;
     oldPrice?: number;
     badge?: string;
-    badgeColor?: "rose" | "amber" | "blue" | "slate";
+    badgeColor?: BadgeColor;
     stockStatus: string;
     disabled?: boolean;
+};
+
+// Fully spelled-out class combinations so Tailwind's build-time scanner
+// can detect them. Template literals like `text-${badgeColor}-600` are
+// NOT picked up by Tailwind and silently produce no styling.
+const badgeStyles: Record<BadgeColor, string> = {
+    rose: "border-rose-100/50 bg-rose-500/10 text-rose-600",
+    amber: "border-amber-100/50 bg-amber-500/10 text-amber-600",
+    blue: "border-blue-100/50 bg-blue-500/10 text-blue-600",
+    slate: "border-slate-100/50 bg-slate-500/10 text-slate-600",
 };
 
 export function ProductCard({
@@ -59,12 +71,7 @@ export function ProductCard({
                         "
                         aria-label="Quick View"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
+                        <Eye size={20} />
                     </button>
 
                     <button
@@ -77,12 +84,7 @@ export function ProductCard({
                         "
                         aria-label="Add to cart"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                             strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M5 12h14"/>
-                            <path d="M12 5v14"/>
-                        </svg>
+                        <Plus size={20} strokeWidth={2.5} />
                     </button>
                 </div>
 
@@ -90,10 +92,8 @@ export function ProductCard({
                 {badge && (
                     <span className={`
                         absolute left-3 top-3 px-3 py-1 text-[11px] font-bold rounded-full
-                        border border-${badgeColor}-100/50
-                        bg-${badgeColor}-500/10
-                        text-${badgeColor}-600
                         backdrop-blur-md
+                        ${badgeStyles[badgeColor]}
                     `}>
                         {badge}
                     </span>

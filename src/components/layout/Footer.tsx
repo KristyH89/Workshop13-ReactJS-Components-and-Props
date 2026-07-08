@@ -1,5 +1,3 @@
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
 import { Container } from "../ui/Container";
 
 const shopLinks = [
@@ -51,7 +49,7 @@ export function Footer() {
 
                             {/* Twitter icon */}
                             <button
-                                className="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors hover:bg-blue-600 hover:text-white"
+                                className="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors hover:bg-[var(--color-primary)] hover:text-white"
                                 aria-label="Twitter"
                             >
                                 <svg
@@ -71,7 +69,7 @@ export function Footer() {
 
                             {/* Instagram icon */}
                             <button
-                                className="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors hover:bg-blue-600 hover:text-white"
+                                className="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors hover:bg-[var(--color-primary)] hover:text-white"
                                 aria-label="Instagram"
                             >
                                 <svg

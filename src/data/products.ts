@@ -1,5 +1,7 @@
 // data/products.ts
-export const products = [
+import type { Product } from "../types/product";
+
+export const products: Product[] = [
     {
         id: 1,
         image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&q=80&w=800",
@@ -58,7 +60,6 @@ export const products = [
         badge: "Hot Deal",
         badgeColor: "rose",
     },
-
     {
         id: 6,
         image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800",
@@ -69,6 +70,5 @@ export const products = [
         stockStatus: "In Stock • Ships tomorrow",
         badge: "New Arrival",
         badgeColor: "blue",
-    }
-
+    },
 ];
