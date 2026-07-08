@@ -11,9 +11,10 @@ const availabilityOptions = ["In Stock", "On Sale"];
 
 export function Sidebar() {
     return (
-        <aside className="w-60 shrink-0 space-y-8">
+        <aside className="w-60 shrink-0 space-y-8 rounded-3xl bg-[var(--color-primary)]/15 p-6">
 
-            {/* Categories */}
+
+        {/* Categories */}
             <section>
                 <SectionTitle>Categories</SectionTitle>
 

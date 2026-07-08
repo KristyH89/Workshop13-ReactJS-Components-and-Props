@@ -1,35 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/layout/Header";
-import { Sidebar } from "./components/layout/Sidebar";
-import { HeroBanner } from "./components/layout/HeroBanner";
-import { Container } from "./components/ui/Container";
+import { Newsletter } from "./components/layout/Newsletter";
+import { Footer } from "./components/layout/Footer";
 
-import summerSales from "./assets/summersales3.jpg";
+import { Home } from "./pages/Home";
+import { Shop } from "./pages/Shop";
 
 function App() {
     return (
-        <>
+        <BrowserRouter>
             <Header />
 
-            {/* Main page layout */}
-            <main className="py-8">
-                <Container>
-                    <div className="flex items-start gap-8">
-                        {/* Left column */}
-                        <Sidebar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
+            </Routes>
 
-                        {/* Right column */}
-                        <div className="flex-1">
-                            <HeroBanner
-                                title="Summer Sale"
-                                description="Get up to 50% off on all summer collections. Limited time offer!"
-                                buttonText="Shop Now"
-                                image={summerSales}
-                            />
-                        </div>
-                    </div>
-                </Container>
-            </main>
-        </>
+            <Newsletter />
+            <Footer />
+        </BrowserRouter>
     );
 }
 

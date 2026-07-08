@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../ui/Button";
 
 type HeroBannerProps = {
@@ -5,6 +6,7 @@ type HeroBannerProps = {
     description: string;
     buttonText: string;
     image: string;
+    imageAlt?: string;
 };
 
 export function HeroBanner({
@@ -22,7 +24,7 @@ export function HeroBanner({
                 className="h-[500px] w-full object-cover md:h-[600px] lg:h-[700px]"
             />
 
-            {/* Dark overlay to improve text readability */}
+            {/* Dark overlay */}
             <div className="absolute inset-0 flex items-center bg-black/35">
                 <div className="max-w-lg px-8 md:px-12 lg:px-16">
                     <h2 className="text-4xl font-bold text-white md:text-5xl">
@@ -33,9 +35,12 @@ export function HeroBanner({
                         {description}
                     </p>
 
-                    <Button className="mt-8 px-8 py-3">
-                        {buttonText}
-                    </Button>
+                    {/* CTA button */}
+                    <Link to="/shop">
+                        <Button className="mt-8 px-8 py-3">
+                            {buttonText}
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>
